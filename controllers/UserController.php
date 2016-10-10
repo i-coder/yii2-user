@@ -108,13 +108,9 @@ class UserController extends Controller
         $_POST['SignupForm']['city_id'] = $session->get('city_id');
         $model = new SignupForm();
         $model->city_id = $session->get('city_id');
-
-        if(Yii::$app->request->post()){
-            if(Yii::$app->request->post()['SignupForm']['type']==User::TYPE_ONE){
-                $model->scenario = User::MASTER;
-            }
+        if(Yii::$app->request->post()['SignupForm']['type']==User::TYPE_ONE){
+            $model->scenario = User::MASTER;
         }
-
         //привязка города
         if ($model->load(Yii::$app->request->post())) {
 
