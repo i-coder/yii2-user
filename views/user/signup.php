@@ -77,7 +77,7 @@ $this->registerJs($script_two, yii\web\View::POS_READY);
                     'data' =>\cornernote\menu\models\Menu::findOne(1)->children()
                         ->where(['depth'=>1])->select(['name', 'id'])
                         ->indexBy('id')->asArray()->column(),
-                    'options' => ['placeholder' => 'Категория..','id'=>$id],
+                    'options' => ['placeholder' => 'Категория..'],
                 ]);
                 ?>
                 <br>
