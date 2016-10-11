@@ -33,6 +33,13 @@ $script_two = <<< JS
                 $("#category_id").css('display','block');
             }
         });
+        //refresh button capcha
+        $("#fox").on('click',function(e){
+            //#testimonials-captcha-image is my captcha image id
+            $("img[id$='-captcha-image']").trigger('click');
+            e.preventDefault();
+          })
+
 JS;
 $this->registerJs($script_two, yii\web\View::POS_READY);
 ?>
@@ -121,17 +128,22 @@ $this->registerJs($script_two, yii\web\View::POS_READY);
 
 
             <?php
-            echo $form->field($model, 'captcha')->widget(Captcha::className(), [
-                'captchaAction' => 'lowbase-user/default/captcha',
-                'options' => [
-                    'class' => 'form-control',
-                    'placeholder' => $model->getAttributeLabel('captcha')
-                ],
-                'template' => '<div class="row">
-                <div class="col-lg-8">{input}</div>
-                <div class="col-lg-4">{image}</div>
-                </div>',
-            ]);
+               echo  $form->field($model, 'captcha')->widget(\yii\captcha\Captcha::classname(), [
+                   'captchaAction' => 'lowbase-user/default/captcha',
+                    'template' => '<div class="row">
+                    <div class="col-lg-6">{input}</div><div class="col-lg-6">{image}<br> <a href="javascript:;" id="fox">Обновить код</a></div></div>',
+                ]);
+                //            echo $form->field($model, 'captcha')->widget(Captcha::className(), [
+//                'captchaAction' => 'lowbase-user/default/captcha',
+//                'options' => [
+//                    'class' => 'form-control',
+//                    'placeholder' => $model->getAttributeLabel('captcha')
+//                ],
+//                'template' => '<div class="row">
+//                <div class="col-lg-8">{input}</div>
+//                <div class="col-lg-4">{image}</div>
+//                </div>',
+//            ]);
             ?>
 
 
