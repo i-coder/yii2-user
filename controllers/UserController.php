@@ -233,6 +233,8 @@ class UserController extends Controller
         } catch (InvalidParamException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }
+        var_dump($token);
+        var_dump( new EmailConfirm($token););
         var_dump($model->confirmEmail());
         die();
         if ($user_id = $model->confirmEmail()) {
