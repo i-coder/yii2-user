@@ -236,6 +236,7 @@ class UserController extends Controller
         var_dump($token);
         var_dump( new EmailConfirm($token));
         var_dump($model->confirmEmail());
+        $model->confirmEmail();
         die();
         if ($user_id = $model->confirmEmail()) {
             // Авторизируемся при успешном подтверждении
