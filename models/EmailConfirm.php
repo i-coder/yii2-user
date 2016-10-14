@@ -49,7 +49,9 @@ class EmailConfirm extends Model
     {
         $user = $this->_user;
         $user->status = User::STATUS_ACTIVE;
-        $user->removeEmailConfirmToken();   // Удаление токена подтверждения электронной почты
+        $user->removeEmailConfirmToken();  
+        // Удаление токена подтверждения электронной почты
+        //много текста бла бла бла бла 
         return (($user->save(false))) ? $user->id : false;
     }
 }
