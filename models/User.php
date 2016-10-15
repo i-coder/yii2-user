@@ -209,7 +209,7 @@ class User extends ActiveRecord implements IdentityInterface
             'birthday' => Yii::t('user', 'Дата рождения'),
             'phone' => Yii::t('user', 'Телефон'),
             'home_phone' => Yii::t('user', 'Домашний телефон'),
-            'country_id' => Yii::t('user', 'Страна'),
+            'country_id' => Yii::t('user', 'Город'),
             'city_id' => Yii::t('user', 'Город'),
             'address' => Yii::t('user', 'Адрес'),
             'status' => Yii::t('user', 'Статус'),
