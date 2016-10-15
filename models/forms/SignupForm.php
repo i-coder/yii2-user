@@ -73,7 +73,7 @@ class SignupForm extends User
     public function attributeLabels()
     {
         $labels = parent::attributeLabels();
-        $labels['password'] = Yii::t('user', 'Пароль');
+        $labels['password'] = Yii::t('user', 'Придумайте пароль');
         $labels['captcha'] = Yii::t('user', 'Защитный код');
         return $labels;
     }
