@@ -162,6 +162,9 @@ class User extends ActiveRecord implements IdentityInterface
             [['first_name'], 'required'],   // Имя обязательно для заполнения
             [['sex', 'country_id', 'city_id', 'status'], 'integer'],    // Только целочисленные значения
             [['birthday', 'login_at'], 'safe'], // Безопасные аттрибуты (любые значения) - преобразуются автоматически
+
+            [['birthday'], 'date', 'format' => 'php:d.m.Y'],
+
             [['first_name', 'last_name', 'email', 'phone'], 'string', 'max' => 100],    // Строки до 100 символов
             [['auth_key'], 'string', 'max' => 32],  // Строка до 32 символов
             [['ip'], 'string', 'max' => 20],    // Строковое значение (максимум 20 симоволов)

@@ -72,7 +72,10 @@ $assets = UserAsset::register($this);
 
         <?= $form->field($model, 'birthday')
             ->widget(DatePicker::classname(), [
-                'options' => ['placeholder' => $model->getAttributeLabel('birthday')],
+                'options' => [
+                    'placeholder' => $model->getAttributeLabel('birthday'),
+                        'autocomplete'=>"off"
+                ],
                 'type' => DatePicker::TYPE_COMPONENT_APPEND,
                 'pluginOptions' => [
                     'autoclose'=>true,
