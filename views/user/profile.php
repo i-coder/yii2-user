@@ -36,6 +36,12 @@ $assets = UserAsset::register($this);
     <div class="col-lg-12">
         <ul class="nav nav-tabs nav-justified">
             <li role="presentation"  class="<?=(Yii::$app->controller->route=='user/profile')?"active":""?>"><a href="<?= Url::toRoute(['/profile']) ?>"><?= Html::encode($this->title) ?></a></li>
+            <?php
+            $app_count = \app\models\Application::find()->where(['whom'=>Yii::$app->user->id])->andWhere(['status'=>\app\models\Application::APP_SUCCESS])->count();
+            if($app_count>0){?>
+                <li role="presentation"  class="<?=(Yii::$app->controller->route=='user/application')?"active":""?>"><a href="<?= Url::toRoute(['/appuser']) ?>">Ваши заявки  <span class="badge" style="font-size: 14px"><?=$app_count?></span></a></li>
+            <?php }
+            ?>
             <li role="presentation"  class="<?=(Yii::$app->controller->route=='example')?"active":""?>"><a href="<?= Url::toRoute(['/example']) ?>">Примеры работ</a></li>
             <li role="presentation" class="<?=(Yii::$app->controller->route=='sertificat/sertificat')?"active":""?>"><a href="<?= Url::toRoute(['sertificat/sertificat']) ?>">Сертификаты</a></li>
             <li role="presentation" class="<?=(Yii::$app->controller->route=='servicess/index')?"active":""?>"><a href="<?= Url::toRoute(['servicess/index']) ?>">Услуги</a></li>
