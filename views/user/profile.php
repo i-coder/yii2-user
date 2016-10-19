@@ -39,7 +39,7 @@ $assets = UserAsset::register($this);
             <?php
             $app_count = \app\models\Application::find()->where(['whom'=>Yii::$app->user->id])->andWhere(['status'=>\app\models\Application::APP_SUCCESS])->count();
             if($app_count>0){?>
-                <li role="presentation"  class="<?=(Yii::$app->controller->route=='user/application')?"active":""?>"><a href="<?= Url::toRoute(['/appuser']) ?>">Ваши заявки  <span class="badge" style="font-size: 14px"><?=$app_count?></span></a></li>
+                <li role="presentation"  class="<?=(Yii::$app->controller->route=='user/application')?"active":""?>"><a href="<?= Url::toRoute(['/appuser']) ?>">Заявки  <span class="badge" style="font-size: 14px"><?=$app_count?></span></a></li>
             <?php }
             ?>
             <li role="presentation"  class="<?=(Yii::$app->controller->route=='example')?"active":""?>"><a href="<?= Url::toRoute(['/example']) ?>">Примеры работ</a></li>
