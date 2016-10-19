@@ -31,10 +31,10 @@ $assets = UserAsset::register($this);
             'header' => '',
             'headerOptions' => ['class' => 'kartik-sheet-style']
         ],
-        [
-            'attribute' => 'id',
-            'width' => '70px',
-        ],
+//        [
+//            'attribute' => 'id',
+//            'width' => '70px',
+//        ],
         [
             'attribute' => 'country_id',
             'value' => function ($model) {
@@ -51,7 +51,8 @@ $assets = UserAsset::register($this);
                 'class' => 'form-control'
             ],
         ],
-        'city',
+//        'city',
+        'name',
         'state',
         'region',
         [

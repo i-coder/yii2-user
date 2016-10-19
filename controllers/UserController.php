@@ -135,11 +135,14 @@ class UserController extends Controller
 
                 Yii::$app->getSession()->setFlash('signup-success', Yii::t('user', 'Ссылка с подтверждением регистрации отправлена на Email.'));
             }else{
-
+//var_dump($model->errors);
                 if(strlen(Url::previous())>1){
                     return $this->redirect([Url::previous()]);
                 }else{
-                    return $this->goBack(['signup']);
+                    return $this->render('@vendor/lowbase/yii2-user/views/user/signup', [
+                        'model' => $model,
+                    ]);
+//                    return $this->goBack(['signup']);
                 }
             }
 
