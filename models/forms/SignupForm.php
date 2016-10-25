@@ -30,7 +30,7 @@ class SignupForm extends User
     public function rules()
     {
         return [
-            [['first_name', 'password', 'email', 'captcha','type'], 'required'],   // Обязательные поля
+            [['first_name', 'password', 'email', 'captcha','type','home_phone'], 'required'],   // Обязательные поля
             ['email', 'unique', 'targetClass' => self::className(),
                 'message' => Yii::t('user', 'Данный Email уже зарегистрирован.')],  // Электронная почта должна быть уникальна
             ['email', 'email'], // Электронная почта
@@ -60,8 +60,8 @@ class SignupForm extends User
         public function scenarios()
     {
         return [
-            'master' => ['first_name', 'password','email','captcha','type','city_id','category_id'],
-            'default'=>['first_name', 'password','email','captcha','city_id','type'],
+            'master' => ['first_name', 'password','email','captcha','type','city_id','category_id','home_phone'],
+            'default'=>['first_name', 'password','email','captcha','city_id','type','home_phone'],
         ];
     }
 

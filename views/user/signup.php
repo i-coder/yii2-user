@@ -46,8 +46,6 @@ $this->registerJs($script_two, yii\web\View::POS_READY);
 
 
 
-
-
 <div class="site-signup row">
 
         <div class="col-lg-6">
@@ -88,8 +86,13 @@ $this->registerJs($script_two, yii\web\View::POS_READY);
                 ]);
                 ?>
                 <br>
-                </div>
 
+
+
+                </div>
+                <?= $form->field($model, 'home_phone')->widget(\yii\widgets\MaskedInput::className(), [
+                'mask' => '+7(999)-999-99-99',
+            ])->textInput(['placeholder' => $model->getAttributeLabel('phone')]) ?>
                 <?= $form->field($model, 'email')->textInput([
                 'maxlength' => true,
                 'placeholder' => $model->getAttributeLabel('email')
