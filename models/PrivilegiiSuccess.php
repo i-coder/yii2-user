@@ -28,7 +28,7 @@ class PrivilegiiSuccess extends \yii\db\ActiveRecord
      */
 
     const FREE_IMG_EXAMPLE_WORK = 5;
-    const FREE_IMG_SERT_EXAMPLE_WORK = 1;
+    const FREE_IMG_SERT_EXAMPLE_WORK = 2;
     public static function tableName()
     {
         return 'lb_privilegii_success';
