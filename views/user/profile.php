@@ -76,18 +76,19 @@ $assets = UserAsset::register($this);
 //            'mask' => '+7(7112)-99-99-99',
 //        ])->textInput(['placeholder' => $model->getAttributeLabel('home_phone')]) ?>
 
-        <?= $form->field($model, 'birthday')
-            ->widget(DatePicker::classname(), [
-                'options' => [
-                    'placeholder' => $model->getAttributeLabel('birthday'),
-                        'autocomplete'=>"off"
-                ],
-                'type' => DatePicker::TYPE_COMPONENT_APPEND,
-                'pluginOptions' => [
-                    'autoclose'=>true,
-                    'format' => 'dd.mm.yyyy'
-                ]
-                ]); ?>
+<!--        --><?//= $form->field($model, 'birthday')
+//            ->widget(DatePicker::classname(), [
+//                'options' => [
+//                    'placeholder' => $model->getAttributeLabel('birthday'),
+//                        'autocomplete'=>"off"
+//                ],
+//                'type' => DatePicker::TYPE_COMPONENT_APPEND,
+//                'pluginOptions' => [
+//                    'autoclose'=>true,
+//                    'format' => 'dd.mm.yyyy'
+//                ]
+//                ]);
+//        ?>
 
         <?php
        echo  $form->field($model, 'city_id')->widget(Select2::classname(), [
