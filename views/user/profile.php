@@ -143,11 +143,11 @@ $assets = UserAsset::register($this);
 //            'placeholder' => $model->getAttributeLabel('address')
 //        ]) ?>
 
-        <span style="float: left;margin-right: 10px">С кем я работаю: </span>
-      
+        <span style="float: left;margin-right: 10px">С кем я работаю: </span><br>
+
         <?= $form->field($model, 'work')->radioList(User::getWorkArray(),array('template' => "<td>{input}</td><td>{label}</td>")) ?>
 
-        <span style="float: left;margin-right: 10px">Пол: </span>
+        <span style="float: left;margin-right: 10px">Пол: </span><br>
         <?= $form->field($model, 'sex')->radioList(User::getSexArray()) ?>
 
     </div>
