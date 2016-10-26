@@ -474,15 +474,15 @@ class User extends ActiveRecord implements IdentityInterface
         if ($this->photo) {
             $this->removeImage();   // Сначала удаляем старое изображение
             $module = Yii::$app->controller->module;
-            $path = Yii::$app->basePath."/web".$this->userPhotoPath; // Путь для сохранения аватаров
+            $path = $this->userPhotoPath; // Путь для сохранения аватаров
             $name = time() . '-' . $this->id; // Название файла
 //var_dump($path);
 //
 //var_dump(Yii::$app->basePath."/web".$path);
 //            die();
             $this->image =  Yii::getAlias('@webroot').$path. '/' . $name . $this::EXT;   // Путь файла и название
-            if (!file_exists($path)) {
-                mkdir($path, 0755, true);   // Создаем директорию при отсутствии
+            if (!file_exists(Yii::getAlias('@webroot').$path)) {
+                mkdir(Yii::getAlias('@webroot').$path, 0755, true);   // Создаем директорию при отсутствии
             }
             if (is_object($this->photo)) {
                 // Загружено через FileUploadInterface
