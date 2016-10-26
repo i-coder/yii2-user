@@ -479,7 +479,7 @@ class User extends ActiveRecord implements IdentityInterface
 
             $this->image =  Yii::getAlias('@webroot').$path. '/' . $name . $this::EXT;   // Путь файла и название
             if (!file_exists($path)) {
-                mkdir($path, 0777, true);   // Создаем директорию при отсутствии
+                mkdir($path, 0755, true);   // Создаем директорию при отсутствии
             }
             if (is_object($this->photo)) {
                 // Загружено через FileUploadInterface
