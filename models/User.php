@@ -141,6 +141,8 @@ class User extends ActiveRecord implements IdentityInterface
             self::WORK_ONE =>  Yii::t('user', 'Один'),
             self::WORK_TWO => Yii::t('user', 'С напарником'),
             self::WORK_THREE => Yii::t('user', 'С бригадой'),
+            self::WORK_FOUR => Yii::t('user', 'Организация'),
+            self::WORK_FIVE => Yii::t('user', 'Салон'),
         ];
     }
     public static function getTypeArray()
