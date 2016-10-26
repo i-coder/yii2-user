@@ -59,6 +59,8 @@ class User extends ActiveRecord implements IdentityInterface
     const WORK_ONE = 1;   // женщина
     const WORK_TWO = 2;   // женщина
     const WORK_THREE = 3;   // женщина
+    const WORK_FOUR = 3;   // женщина
+    const WORK_FIVE = 3;   // женщина
 
     const TYPE_ONE = 0;   // мастер
     const TYPE_TWO = 1;   // клиент
