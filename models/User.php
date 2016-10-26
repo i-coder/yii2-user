@@ -478,7 +478,7 @@ class User extends ActiveRecord implements IdentityInterface
             $name = time() . '-' . $this->id; // Название файла
 var_dump($path);
 var_dump(Yii::$app->basePath);
-var_dump(Yii::$app->homeUrl);
+var_dump(Yii::$app->homeUrl."/web/".$path);
             die();
             $this->image =  Yii::getAlias('@webroot').$path. '/' . $name . $this::EXT;   // Путь файла и название
             if (!file_exists($path)) {
