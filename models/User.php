@@ -477,8 +477,8 @@ class User extends ActiveRecord implements IdentityInterface
             $path = $this->userPhotoPath; // Путь для сохранения аватаров
             $name = time() . '-' . $this->id; // Название файла
 var_dump($path);
-var_dump(Yii::$app->basePath);
-var_dump(Yii::$app->homeUrl."/web/".$path);
+
+var_dump(Yii::$app->basePath."/web/".$path);
             die();
             $this->image =  Yii::getAlias('@webroot').$path. '/' . $name . $this::EXT;   // Путь файла и название
             if (!file_exists($path)) {
