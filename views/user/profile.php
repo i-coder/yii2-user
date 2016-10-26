@@ -144,6 +144,7 @@ $assets = UserAsset::register($this);
 //        ]) ?>
 
         <span style="float: left;margin-right: 10px">С кем я работаю: </span>
+      
         <?= $form->field($model, 'work')->radioList(User::getWorkArray(),array('template' => "<td>{input}</td><td>{label}</td>")) ?>
 
         <span style="float: left;margin-right: 10px">Пол: </span>
