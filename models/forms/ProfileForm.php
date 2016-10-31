@@ -37,7 +37,7 @@ class ProfileForm extends User
             [['password'], 'string', 'min' => 4],   // Пароль минимум 4 символа
             [['sex', 'country_id', 'city_id', 'status'], 'integer'],    // Целочисленные значения
             [['birthday', 'login_at'], 'safe'], // Безопасные аттрибуты
-            [['first_name', 'last_name', 'email', 'phone','home_phone'], 'string', 'max' => 100], // Строковые значения (максимум 100 символов)
+            [['first_name', 'last_name', 'patronymic', 'email', 'phone','home_phone'], 'string', 'max' => 200], // Строковые значения (максимум 100 символов)
             [['auth_key'], 'string', 'max' => 32],  // Строковое значение (максимум 32 символа)
             [['ip'], 'string', 'max' => 20],    // Строковое значение (максимум 20 симоволов)
             [['password_hash', 'password_reset_token', 'email_confirm_token', 'image', 'address'], 'string', 'max' => 255], // Строка (максимум 255 символов)
