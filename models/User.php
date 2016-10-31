@@ -163,7 +163,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['first_name'], 'required'],   // Имя обязательно для заполнения
+            [['first_name','last_name','patronymic'], 'required'],   // Имя обязательно для заполнения
             [['sex', 'country_id', 'city_id', 'status'], 'integer'],    // Только целочисленные значения
             [['birthday', 'login_at'], 'safe'], // Безопасные аттрибуты (любые значения) - преобразуются автоматически
 
@@ -200,8 +200,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => Yii::t('user', 'ID'),
-            'first_name' => Yii::t('user', 'Ф.И.О'),
+            'first_name' => Yii::t('user', 'Имя'),
             'last_name' => Yii::t('user', 'Фамилия'),
+            'patronymic' => Yii::t('user', 'Отчество'),
             'auth_key' => Yii::t('user', 'Ключ авторизации'),
             'password_hash' => Yii::t('user', 'Хеш пароля'),
             'password_reset_token' => Yii::t('user', 'Токен восстановления пароля'),
