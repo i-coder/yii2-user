@@ -238,7 +238,7 @@ class User extends ActiveRecord implements IdentityInterface
     }
     public function getChildrencategory()
     {
-        return $this->hasMany(Servicess::className(), ['id_user' => 'id'])->asArray();
+        return $this->hasMany(Servicess::className(), ['id_user' => 'id'])->where(['>','summ',0])->asArray();
     }
 
     /**
